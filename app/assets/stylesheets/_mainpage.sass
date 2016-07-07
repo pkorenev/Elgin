@@ -1,0 +1,361 @@
+.main-wrapper
+  .fullscreen
+    height: 100vh
+    position: relative
+    overflow: hidden
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: 10px
+      background-color: $dark-grey
+    .left-side
+      height: 100vh
+      position: relative
+      .text-container
+        position: relative
+        top: 50%
+        +translate(0,-50%)
+        @media #{$small-only}
+          text-align: center
+        .main-header
+          font-size: 6.625em
+          color: $main
+          font-weight: bold
+          text-transform: uppercase
+          margin: 0
+          position: relative
+          display: inline-block
+          @media #{$small-only}
+            font-size: 4em
+            margin-bottom: 30px
+          &:after
+            content: ''
+            position: absolute
+            width: 1000px
+            height: 1px
+            background-color: $light-grey
+            bottom: 10px
+            right: 0
+            @media #{$small-only}
+              width: 120%
+              right: -10%
+              bottom: -25px
+        span
+          color: $dark-grey
+          position: absolute
+          font-size: 1.25rem
+          top: 40px
+          right: -150px
+          @media #{$small-only}
+            top: 60px
+            right: 10px
+        p
+          margin-top: 30px
+          max-width: 480px
+          display: none
+          &:nth-of-type(1)
+            @media #{$medium-up}
+              display: block
+          &:nth-of-type(2)
+            @media #{$small-only}
+              display: block
+      .bottom-text
+        position: absolute
+        font-size: 14px
+        color: $light-grey
+        bottom: 40px
+        left: 50%
+        +translate(-50%,0)
+        &:after
+          content: ''
+          position: absolute
+          height: 20px
+          width: 1px
+          background-color: $light-grey
+          bottom: -30px
+          left: 35px
+    .right-side
+      position: absolute
+      height: 100%
+      width: 50%
+      @media #{$small-only}
+        display: none
+      .img
+        +grayscale
+        position: absolute
+        width: 100%
+        height: 100%
+      .burgundy-line
+        content: ''
+        position: absolute
+        left: 0
+        width: 5px
+        height: 100%
+        background-color: $main
+      .white-frame
+        position: absolute
+        border: 1px solid $light-grey
+        left: 25px
+        top: 20px
+        bottom: 30px
+        width: 1500px
+      .red-square
+        position: absolute
+        width: 80px
+        height: 80px
+        background-color: $main
+        left: 0
+        bottom: 200px
+        a
+          text-align: center
+          line-height: 80px
+          color: #fff
+          font-family: Georgia,Times,Times New Roman,serif
+          font-style: italic
+        svg
+          position: absolute
+          width: 30px
+          top: 40px
+          left: -40px
+          fill: $main
+          stroke: $main
+  .main-container
+    padding: 70px 0
+    overflow: hidden
+    .squares-wrapper
+      margin: 50px -15px
+      @media #{$small-only}
+        margin: 50px -5px
+    .square
+      margin: 15px
+      @media #{$small-only}
+        margin: 5px
+      .mobile-link
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 1
+        display: block
+        @media #{$medium-up}
+          display: none
+      .inner-wrapper
+        position: absolute
+        width: 100%
+        height: 100%
+        overflow: hidden
+        cursor: pointer
+        .img
+          position: absolute
+          width: 100%
+          height: 100%
+          +grayscale
+          +transition(0.5s)
+        .hover-color
+          position: absolute
+          width: 100%
+          height: 100%
+          background-color: rgba(151,26,38,0.9)
+          opacity: 0
+          z-index: 1
+          +transition(0.1s)
+        .big-number
+          position: absolute
+          margin: 0
+          bottom: 0
+          right: 0
+          font-size: 18em
+          font-weight: bold
+          color: #fff
+          opacity: 0.07
+        .text
+          position: absolute
+          top: 20px
+          left: 20px
+          right: 20px
+          bottom: 20px
+          z-index: 2
+        .title
+          font-size: 1.5em
+          font-weight: bold
+          text-transform: uppercase
+          color: #fff
+          line-height: 28px
+          margin-bottom: 20px
+        svg
+          position: absolute
+          width: 40px
+          right: 0
+          bottom: 0
+          fill: #fff
+          stroke: #fff
+          display: none
+        .regular
+          color: #fff
+          line-height: 20px
+          opacity: 0
+          +transition(0.1s)
+        &:hover
+          .img
+            +scale(1.1)
+          .hover-color
+            opacity: 1
+          .regular
+            opacity: 1
+          svg
+            display: block
+    .advantage-block
+      +clearfix
+      margin: 0 auto
+      @media #{$small-only}
+        width: 350px
+      .number
+        float: left
+        font-size: 6em
+        font-weight: bold
+        sub
+          bottom: -0.5em
+          left: -30px
+          @media #{$small-only}
+            left: -15px
+      .text
+        float: left
+        width: 200px
+        margin-top: 120px
+        margin-left: -50px
+        @media #{$small-only}
+          margin-top: 90px
+        @media #{$large-only}
+          width: 150px
+        .title
+          text-transform: uppercase
+          color: $main
+          font-size: 1.75em
+        .regular
+          color: $grey
+    .feedback-container
+      position: relative
+      padding: 100px 0px
+      .mobile-background
+        content: ''
+        position: absolute
+        bottom: 0
+        background: url(#{asset_path('photos/feedback-background.jpg')})
+        width: 120%
+        left: -10%
+        height: 300px
+        background-size: cover
+        background-position: center
+        @media #{$medium-up}
+          display: none
+      @media #{$large-up}
+        padding: 200px 100px
+      .bxslider-1
+        height: 400px
+        padding-top: 20px
+        @media #{$small-only}
+          height: 600px
+        .img-container
+          position: relative
+          width: 250px
+          height: 200px
+          margin-left: 10px
+          @media #{$medium-only}
+            height: 300px
+          @media #{$large-up}
+            width: 300px
+            height: 300px
+            margin-left: 20px
+        .img
+          position: relative
+          width: 100%
+          height: 100%
+          z-index: 1
+          +grayscale
+        .red-frame
+          position: absolute
+          background-color: $main
+          width: 50%
+          left: -10px
+          top: -10px
+          bottom: -10px
+          @media #{$large-up}
+            left: -20px
+            top: -20px
+            bottom: -20px
+      .text
+        position: relative
+        margin-top: -10px
+        z-index: 1
+        @media #{$small-only}
+          margin-top: 30px
+        .title
+          font-size: 1.625em
+          text-transform: uppercase
+          font-weight: bold
+        .subtitle
+          color: $main
+        .regular
+          font-family: Georgia,Times,Times New Roman,serif
+          font-style: italic
+          font-size: 1.25em
+          color: $grey
+          padding-left: 30px
+          margin-top: 30px
+          border-left: 1px solid $grey
+          line-height: 28px
+          position: relative
+          z-index: 1
+          @media #{$small-only}
+            padding-left: 15px
+            line-height: 24px
+          @media #{$medium-only}
+            font-size: 1.125em
+            line-height: 26px
+        .blockquote
+          color: #000
+          opacity: 0.05
+          font-size: 18.75em
+          position: absolute
+          top: 100px
+          right: 70px
+          font-style: italic
+      .slider-selectors
+        position: absolute
+        right: 0
+        bottom: 50px
+        @media #{$small-only}
+          left: 50%
+          +translate(-50%,0)
+        svg
+          width: 30px
+          fill: $grey
+          stroke: $grey
+          +transition(0.1s)
+        .slider-prev, .slider-next, .current-slide
+          display: inline-block
+        .slider-prev, .slider-next
+          position: relative
+          cursor: pointer
+          &:hover
+            svg
+              fill: $main
+              stroke: $main
+        .current-slide
+          position: relative
+          top: 10px
+          margin: 0 15px
+          .number
+            font-size: 3.125em
+            color: $main
+            font-weight: bold
+          span
+            color: $grey
+            font-size: 1.625rem
+      .bx-pager
+        position: absolute
+        bottom: 0
+        right: 0
+  .contact-container
+    position: relative

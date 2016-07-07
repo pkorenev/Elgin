@@ -1,0 +1,53 @@
+form
+  padding: 30px 0
+  @media #{$large-up}
+    padding: 50px 100px
+  .group
+    position: relative
+    margin-top: 25px
+    @media #{$small-only}
+      margin-top: 20px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      width: 2px
+      height: 100%
+      background-color: $main
+      z-index: 1
+  input, textarea
+    position: relative
+    font-size: 1.25em
+    padding: 15px 20px
+    font-family: Georgia,Times,Times New Roman,serif
+    font-style: italic
+    color: #fff
+    display: block
+    width: 100%
+    border: 1px solid $light-grey
+    outline: none
+    background-color: #fff
+    &:focus
+      outline: none
+  label
+    color: $light-grey
+    font-size: 1.125em
+    padding: 15px 20px
+    position: absolute
+    pointer-events: none
+    top: 0
+    left: 0
+    transition: all 0.2s ease
+  input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~ label
+    display: none
+  input:focus, input.used, textarea:focus, textarea.used
+    background-color: $main
+  button
+    background-color: $main
+    font-family: Georgia,Times,Times New Roman,serif
+    font-style: italic
+    color: #fff
+    padding: 30px 40px
+    margin-top: 30px
+    @media #{$small-only}
+      margin-top: 20px

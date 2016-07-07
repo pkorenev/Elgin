@@ -1,0 +1,29 @@
+.header-container
+  .menu-button
+    .menu-button-lines
+  a.name href=root_path
+    | elgin
+  p.language
+    | рус
+    span = inline_svg "icons/arrow-down.svg"
+.menu
+  .frame
+    .menu-button
+      = inline_svg "icons/cross.svg"
+  .top
+    p.name elgin
+    p.under-name Elgin’s duty of care is to the client, our clients come first because our clients make our business
+  .middle  
+    ul.navigation
+      li
+        a href=root_path home
+      li
+        a href=about_us_path about us
+      li
+        a href="#" services
+      li
+        a href="#" faq
+      li
+        a href="#" contact
+  .bottom
+    p.bottom-text Terms & Conditions
