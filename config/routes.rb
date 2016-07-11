@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get "services", action: "services"
     get "service_one", action: "service_one"
     get "faq", action: "faq"
+    get "contact", action: "contact"
+    get "error404", action: "error404"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

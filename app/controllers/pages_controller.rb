@@ -23,6 +23,16 @@ class PagesController < ApplicationController
 
   end
 
+  def contact
+
+  end
+
+  def error404
+    @render_header = false
+    @render_footer = false
+
+  end
+
   private
 
   def set_page_instance
