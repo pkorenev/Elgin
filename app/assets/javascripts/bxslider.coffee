@@ -16,3 +16,19 @@ $(document).ready ->
     $('.slider-next').click ->
       current = slider.getCurrentSlide()
       slider.goToNextSlide(current) + 1
+
+$(document).ready ->
+  $squareWidth = $('.carousel .square').width()
+  slider2 = $('.carousel').bxSlider
+    pager: false
+    controls: false
+    minSlides: 2
+    maxSlides: 6
+    slideWidth: $squareWidth
+    slideMargin: 10
+  $('.carousel-slider-prev').click ->
+    current = slider2.getCurrentSlide()
+    slider2.goToPrevSlide(current) - 1
+  $('.carousel-slider-next').click ->
+    current = slider2.getCurrentSlide()
+    slider2.goToNextSlide(current) + 1

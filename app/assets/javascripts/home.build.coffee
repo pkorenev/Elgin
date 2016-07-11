@@ -5,6 +5,8 @@
 
 #= require plugins/jquery.scrolldelta
 
+# require plugins/clickout
+
 #= require header
 
 #= require appear-initialize
@@ -12,3 +14,5 @@
 #= require scroll-banner
 
 #= require bxslider
+
+#= require main

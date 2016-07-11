@@ -11,6 +11,18 @@ class PagesController < ApplicationController
 
   end
 
+  def services
+
+  end
+
+  def service_one
+    @another_header = true
+  end
+
+  def faq
+
+  end
+
   private
 
   def set_page_instance
