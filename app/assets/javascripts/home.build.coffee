@@ -5,9 +5,13 @@
 
 #= require plugins/jquery.scrolldelta
 
+#= require plugins/jquery-easing
+
 # require plugins/clickout
 
 #= require header
+
+#= require scroll-banner
 
 #= require appear-initialize
 

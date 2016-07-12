@@ -26,7 +26,7 @@ if(is_touch_screen || width < 640) {
                 {scrollTop: top},
                 {
                     duration: 1000,
-                    easing: "easeInCubic",
+                    easing: "easeInOutQuad",
                     //specialEasing: "easeInOutElastic"
                     complete: function(){
                         $body.data("scroll_in_progress", false)
@@ -36,26 +36,18 @@ if(is_touch_screen || width < 640) {
         }
     }
 
-    $('.bottom').on("click", function(){
-        var $slider = $(".banner-container:first")
-        var slider_height = $slider.first().height()
-        var $next_section = $slider.next()
-        var next_section_top = $next_section.offset().top-50
-        scroll_home_banner(next_section_top)
-    })
-
     $("body").on("wheel", function(e){
 
         if(e && e.ctrlKey) {
             return true
         }
-        var $slider = $(".banner-container:first")
+        var $slider = $(".fullscreen")
         if($slider.length == 0){
             return;
         }
         var slider_height = $slider.first().height()
         var $next_section = $slider.next()
-        var next_section_top = $next_section.offset().top-50
+        var next_section_top = $next_section.offset().top
 
         var scroll_top = $("body").scrollTop() || $(window).scrollTop()
         scroll_top = Math.ceil(scroll_top)
