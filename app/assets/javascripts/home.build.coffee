@@ -7,6 +7,8 @@
 
 #= require plugins/jquery-easing
 
+#= require form
+
 # require plugins/clickout
 
 #= require header

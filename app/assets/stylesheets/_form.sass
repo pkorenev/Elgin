@@ -5,6 +5,7 @@ form
   .group
     position: relative
     margin-top: 25px
+    overflow: hidden
     @media #{$small-only}
       margin-top: 20px
     &:before
@@ -26,9 +27,21 @@ form
     width: 100%
     border: 1px solid $light-grey
     outline: none
-    background-color: #fff
-    &:focus
+    &:focus, &.used
       outline: none
+      background-color: transparent
+      z-index: 1
+      border: 1px solid $main
+  textarea
+    height: 291px
+  .background-red
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: $main
+    left: 0
+    top: 0
+    +translate(-100%,0)
   label
     color: $light-grey
     font-size: 1.125em
@@ -40,8 +53,9 @@ form
     transition: all 0.2s ease
   input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~ label
     display: none
-  input:focus, input.used, textarea:focus, textarea.used
-    background-color: $main
+  input:focus ~ .background-red, input.used ~ .background-red, textarea:focus ~ .background-red, textarea.used ~ .background-red
+    +translate(0,0)
+    transition: 0.5s ease-out
   button
     background-color: $main
     font-family: Georgia,Times,Times New Roman,serif

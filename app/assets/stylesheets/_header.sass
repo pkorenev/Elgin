@@ -23,36 +23,41 @@
     font-size: 1.5em
     text-transform: uppercase
     color: $main
-    margin: 0.625rem 1.25rem
+    margin: 0.8rem 1.25rem
   .language
     float: left
     color: $light-grey
     text-transform: uppercase
     font-size: 0.75em
-    padding: 1.25rem
+    margin: 2em 1em
     position: relative
     svg
       width: 1.5em
       fill: $light-grey
       vertical-align: top
     @media #{$small-only}
-      padding: 1rem
+      margin: 2.125em 1em
     &:before
       content: ''
       position: absolute
-      left: 0
-      top: 1rem
+      left: -15px
+      top: -3px
       width: 1px
-      height: 1.75rem
+      height: 1.5rem
       background-color: $light-grey
       @media #{$small-only}
-        top: 0.75rem
         height: 1.5rem
   &.another
     .name
       color: #fff
     .menu-button
       border: 1px solid #fff
+    .language
+      color: #fff
+      &:before
+        background-color: #fff
+      svg
+        fill: #fff
 .menu
   position: fixed
   width: 100%
