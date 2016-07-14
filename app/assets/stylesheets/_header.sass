@@ -24,29 +24,50 @@
     text-transform: uppercase
     color: $main
     margin: 0.8rem 1.25rem
-  .language
-    float: left
-    color: $light-grey
-    text-transform: uppercase
-    font-size: 0.75em
-    margin: 2em 1em
+  .choose-language
+    +clearfix
     position: relative
-    svg
-      width: 1.5em
-      fill: $light-grey
-      vertical-align: top
-    @media #{$small-only}
-      margin: 2.125em 1em
-    &:before
-      content: ''
-      position: absolute
-      left: -15px
-      top: -3px
-      width: 1px
-      height: 1.5rem
-      background-color: $light-grey
+    display: inline-block
+    .language
+      float: left
+      color: $light-grey
+      text-transform: uppercase
+      font-size: 0.75em
+      margin: 2em 1em
+      position: relative
+      cursor: pointer
+      svg
+        width: 1.5em
+        fill: $light-grey
+        vertical-align: top
       @media #{$small-only}
+        margin: 2.125em 1em
+      &:before
+        content: ''
+        position: absolute
+        left: -15px
+        top: -3px
+        width: 1px
         height: 1.5rem
+        background-color: $light-grey
+        @media #{$small-only}
+          height: 1.5rem
+    .expand
+      position: absolute
+      top: 50px
+      left: 0
+      padding-left: 10px
+      display: none
+      @media #{$small-only}
+        top: 40px
+      p
+        color: $light-grey
+        font-size: 0.75em
+        text-transform: uppercase
+        cursor: pointer
+    &.show-it
+      .expand
+        display: block
   &.another
     .name
       color: #fff
@@ -60,15 +81,14 @@
         fill: #fff
 .menu
   position: fixed
-  width: 100%
-  height: 100%
+  width: 0
+  height: 0
   z-index: 10
   left: 0
   top: 0
   background-color: #fff
-  display: none
-  &.opened
-    display: block
+  display: block
+  // +transition(0.5s)
   .frame
     position: absolute
     top: 30px
@@ -85,6 +105,7 @@
     position: absolute
     left: 0
     top: 0
+    opacity: 0
     svg
       fill: #fff
       width: 20px
@@ -99,6 +120,7 @@
     left: 50%
     text-align: center
     +translate(-50%,0)
+    opacity: 0
     .name
       color: $main
       font-size: 3.75em
@@ -117,6 +139,7 @@
     left: 50%
     text-align: center
     +translate(-50%,-50%)
+    opacity: 0
     .navigation
       a
         font-size: 2.5em
@@ -133,5 +156,26 @@
     left: 50%
     text-align: center
     +translate(-50%,0)
+    opacity: 0
     .bottom-text
       color: $dark-grey
+  &.opened
+    width: 100vw
+    height: 100vh
+    +transition(0.35s)
+    .menu-button
+      +transition(0.25s)
+      +transition-delay(0.25s)
+      opacity: 1
+    .top
+      +transition(0.25s)
+      +transition-delay(0.35s)
+      opacity: 1
+    .middle
+      +transition(0.25s)
+      +transition-delay(0.45s)
+      opacity: 1
+    .bottom
+      +transition(0.25s)
+      +transition-delay(0.55s)
+      opacity: 1

@@ -1,6 +1,8 @@
 #= require jquery
 #= require jquery_ujs
 
+#= require global
+
 #= require plugins/jquery.bxslider
 
 #= require plugins/jquery.scrolldelta
@@ -9,7 +11,7 @@
 
 #= require form
 
-# require plugins/clickout
+#= require plugins/clickout
 
 #= require header
 

@@ -4,7 +4,7 @@ classes = {
 }
 
 header_selector = ".header-container"
-banner_selector = ".fullscreen, .banner"
+banner_selector = ""
 
 
 
