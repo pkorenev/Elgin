@@ -95,7 +95,7 @@
     left: 30px
     right: 30px
     bottom: 30px
-    border: 1px solid $light-grey
+    // border: 1px solid $light-grey
     @media #{$small-only}
       top: 10px
       left: 10px
@@ -163,6 +163,8 @@
     width: 100vw
     height: 100vh
     +transition(0.35s)
+    .frame
+      border: 1px solid $light-grey
     .menu-button
       +transition(0.25s)
       +transition-delay(0.25s)
