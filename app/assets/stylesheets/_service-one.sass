@@ -17,8 +17,15 @@
     padding: 3em 7em
     background-color: #fff
     width: 700px
+    a
+      display: inline-block
+      margin: 0 10px
+      svg
+        width: 40px
+        height: 40px
+        fill: $main
     @media #{$small-only}
-      padding: 1em 2em 3em
+      padding: 4em
       width: 300px
     @media #{$medium-only}
       width: 600px
@@ -98,13 +105,14 @@
       margin-top: 10px
       cursor: pointer
       display: inline-block
+      width: 40px
+      height: 40px
       svg
-        stroke: #fff
+        fill: #fff
         +transition(0.25s)
       &:hover
         svg
           fill: $main
-          stroke: $main
   .main-wrapper
     position: relative
   .left-nav-container, .right-nav-container
