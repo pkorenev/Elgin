@@ -59,6 +59,15 @@
       width: 100%
       height: 100%
       +grayscale
+      &:after
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+        background-color: $dark-grey
+        opacity: 0.8
     .png
       position: absolute
       width: 100%
@@ -74,6 +83,17 @@
         top: 10px
         left: 10px
         right: 10px
+    .big-number
+      position: absolute
+      font-size: 50em
+      font-weight: bold
+      color: #fff
+      opacity: 0.07
+      line-height: 670px
+      right: 10%
+      @media #{$small-only}
+        font-size: 30em
+        line-height: 200px
     .text-center
       position: relative
       top: 40%
