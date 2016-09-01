@@ -3,13 +3,30 @@
     .menu-button-lines
   a.name href=root_path
     | elgin
+
   .choose-language
     p.language
-      | рус
+      = Cms.config.locale_names[I18n.locale.to_sym]
       span = inline_svg "icons/arrow-down.svg"
     .expand
-      p укр
-      p eng
+      - @_locale_links.each do |locale, url|
+        - active = locale == I18n.locale.to_sym
+        - if !active
+          p
+            a href=url
+              = Cms.config.locale_names[locale]
+
+
+
+  /.locales
+    - @_locale_links.each do |locale, url|
+      - active = locale == I18n.locale.to_sym
+      - if active
+        span.locale-link class="active"
+          = Cms.config.locale_names[locale]
+      - else
+        a.locale-link href=url
+          = Cms.config.locale_names[locale]
 .menu
   .frame
     .menu-button
@@ -18,17 +35,16 @@
     a.name href=root_path
       | elgin
     p.under-name Elgin’s duty of care is to the client, our clients come first because our clients make our business
-  .middle  
+  .middle
+
     ul.navigation
-      li
-        a href=root_path home
-      li
-        a href=about_us_path about us
-      li
-        a href=services_path services
-      li
-        a href=faq_path faq
-      li
-        a href=contact_path contact
+      - main_menu_items.each do |k, v|
+        li
+          a href=v[:url]
+            = v[:name]
+
   .bottom
-    p.bottom-text Terms & Conditions
+    - main_menu_secondary_items.each do |k, v|
+      p.bottom-text
+        a href=v[:url]
+          = v[:name]

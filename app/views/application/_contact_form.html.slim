@@ -1,0 +1,12 @@
+form action=""
+  .row
+    .large-6.medium-12.columns
+      = input(@contact_form, :name, required: true)
+      = input(@contact_form, :company, required: false)
+      = input(@contact_form, :email, required: true)
+      = input(@contact_form, :phone, required: true)
+
+    .large-6.medium-12.columns
+      = input(@contact_form, :description, required: false, type: :text)
+  button type="submit"
+    | Send

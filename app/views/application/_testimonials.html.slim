@@ -1,0 +1,30 @@
+- if @testimonials.try(:any?)
+  .feedback-container
+    ul.bxslider-1
+      - @testimonials.each do |item|
+        li
+          .row
+            .large-5.medium-5.small-12.columns
+              .img-container
+                .img style="background-image: url(#{item.avatar.url(:avatar)})"
+                .red-frame
+            .large-7.medium-7.small-12.columns
+              .text
+                p.title
+                  = item.name
+                p.subtitle
+                  = item.position
+                p.regular
+                  = item.content
+                span.blockquote &#10078;
+
+    .slider-selectors
+      .slider-prev
+        = inline_svg "icons/arrow-left.svg"
+      .current-slide
+        span.number
+          | 1
+        span
+          |&#47;#{@testimonials.length}
+      .slider-next
+        = inline_svg "icons/arrow-right.svg"

@@ -1,4 +1,5 @@
-class Pages::AboutUs < Cms::Page
-  #has_html_block :content
+module Pages
+  class AboutUs < Cms::Page
 
+  end
 end

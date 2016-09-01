@@ -1,0 +1,71 @@
+.popup-social
+  .social-container
+    a href="#"
+      = inline_svg "icons/share-fb.svg"
+    a href="#"
+      = inline_svg "icons/share-google.svg"
+    a href="#"
+      = inline_svg "icons/share-twitter.svg"
+    .close-popup
+      = inline_svg "icons/cross.svg"
+.service-wrapper
+  .banner
+    - banner_image_url = @banner[:image_url] || asset_path('photos/banner-service.jpg')
+    .img style="background-image: url(#{banner_image_url})"
+    .png style="background-image: url(#{asset_path('photos/pattern.png')})"
+    .frame
+    .text-center
+      p.title services
+      p.header wealth structuring
+      .share
+        = inline_svg "icons/share.svg"
+  .main-wrapper
+    a.left-nav-container href=@prev.url
+      span.number
+        = @prev.sorting_position
+      p
+        = @prev.name
+      .arrow
+        = inline_svg "icons/arrow-left.svg"
+        span prev
+    a.right-nav-container href=@next.url
+      span.number
+        = @next.sorting_position
+      p
+        = @next.name
+      .arrow
+        = inline_svg "icons/arrow-right.svg"
+        span next
+    .row.collapse
+      .columns
+        .text-wrapper
+          = raw @service.content
+    .row
+      .columns
+        h2.section-header
+          | other services
+
+  - if @services.try(:any?)
+    .carousel-container
+      .navigation
+        .carousel-slider-prev
+          = inline_svg "icons/arrow-left.svg"
+        .carousel-slider-next
+          = inline_svg "icons/arrow-right.svg"
+      ul.carousel
+        - @services.each do |service|
+          li
+            .square
+              a.mobile-link href=service.url
+              .inner-wrapper
+                .img style="background-image: url(#{service.avatar.url(:avatar)})"
+                .hover-color
+                p.big-number
+                  = service.sorting_position
+                .text
+                  p.title
+                    = service.name
+                  p.regular
+                    = service.short_description
+                  a href=service.url
+                    = inline_svg "icons/arrow-right.svg"

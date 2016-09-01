@@ -1,0 +1,14 @@
+.services-wrapper
+  .bottom-img style="background-image: url(#{asset_path('photos/bottom-services.jpg')})"
+  .row
+    .columns
+      .text-center
+        h2.header
+          | our services
+        p.under-section-header Elgin is an independent wealth structuring and wealth solutions provider.  Our services go beyond a typical multi-family office that services high net wroth individuals as we are also advisors to other Family/Multi&mdash; Family Offices.
+      .squares-wrapper
+        .row.collapse
+          - if @services.try(:any?)
+            - @services.each_with_index do |service, index|
+              = render "service", service: service, service_index: index
+

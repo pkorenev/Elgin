@@ -1,11 +1,9 @@
 doctype html
 html
   head
-    title
-      | Elgin
-    meta name="description" content="some text goes here"
-    meta name="keywords" keywords="few words"
-    / = seo_tags
+
+    = seo_tags
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    "home.build", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags

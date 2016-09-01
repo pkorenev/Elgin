@@ -2,35 +2,11 @@
   .banner style="background-image: url(#{asset_path('photos/banner-contacts.jpg')})"
     .text-center
       h2.header
-        | contacts
-      p Thank You for Your interest in Proaltus Capital PArtners. Please fill out all of the required fields of our contact form so we can get contact You
+        = t("contact-block.title")
+      p
+        = t("contact-block.description")
   .contact-container
     .row
-      .columns      
+      .columns
         .text-center
-          form
-            .row
-              .large-6.medium-12.columns
-                .group
-                  input type="text"
-                  .background-red
-                  label Your name *
-                .group
-                  input type="text"
-                  .background-red
-                  label Company
-                .group
-                  input type="text"
-                  .background-red
-                  label Your e-mail *
-                .group
-                  input type="text"
-                  .background-red
-                  label Your phone *
-              .large-6.medium-12.columns
-                .group
-                  textarea rows="8"
-                  .background-red
-                  label Your question
-            button type="submit"
-              | Send
+          = render "contact_form"

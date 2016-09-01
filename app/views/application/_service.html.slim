@@ -1,0 +1,16 @@
+.large-3.medium-4.small-6.columns.service
+  .square
+    /a.mobile-link href=service.url
+    a.inner-wrapper href=service.url
+      .img style="background-image: url(#{service.avatar.url(:avatar)})"
+      .hover-color
+      p.big-number
+        = service_index + 1
+      .text
+        p.title
+          = service.name
+        p.regular
+          = service.short_description
+        span.arrow
+          = inline_svg "icons/arrow-right.svg"
+

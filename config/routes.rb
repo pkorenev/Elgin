@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
-  root to: "pages#main"
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  controller :pages do
-    get "about_us", action: "about_us"
-    get "services", action: "services"
-    get "service_one", action: "service_one"
-    get "faq", action: "faq"
-    get "contact", action: "contact"
-    get "error404", action: "error404"
+  root as: "root_without_locale", to: "application#root_without_locale"
+
+  scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
+    root to: "pages#index"
+    controller :pages do
+      get "about_us", action: "about_us"
+      get "faq", action: "faq"
+      get "contact", action: "contact"
+      get "terms-and-conditions", action: "terms_and_conditions", as: :terms_and_conditions
+    end
+
+    controller "forms" do
+      post "contact-request", action: "contact_request"
+    end
+    scope "services", controller: "services" do
+      root action: "index", as: :services
+      get ":id", action: :show, as: :service
+    end
   end
+
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # mount Ckeditor::Engine => '/ckeditor'

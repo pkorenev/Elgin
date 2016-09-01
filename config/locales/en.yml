@@ -21,3 +21,51 @@
 
 en:
   hello: "Hello world"
+
+  menu:
+    root: "Home"
+    about_us: "About us"
+    services: "Services"
+    contact: "Contact"
+    terms_and_conditions: "Terms & Conditions"
+  advantages-block:
+    title: "Advantages"
+    description: "Elgin’s duty of care is to the client, our clients come first because our clients make our business."
+    advantages:
+      -
+        count: 105
+        label: "years"
+        description: "of experience in wealth structuring and financial services industry"
+
+      -
+        count: 10
+        label: "different"
+        description: "countries that our clients come from"
+
+      -
+        count: 6
+        label: "senior"
+        description: "highly skilled proffessionals to service our clients' needs"
+
+  home-contact-block:
+    title: "Contact us"
+    description: "Your professional consultants are always happy to help You answer all the questions You asked"
+
+  contact-block:
+    title: "CONTACTS"
+    description: "Thank You for Your interest in Proaltus Capital PArtners. Please fill out all of the required fields of our contact form so we can get contact You"
+
+  about-us:
+    title: "About us"
+    description: "Our Managing Partners and our senior advisors are professionals with decades of experience. We focus on what we excel and we strive to be known and respected as the best in our field."
+
+  services:
+    title: "Our services"
+    description: "Elgin is an independent wealth structuring and wealth solutions provider. Our services go beyond a typical multi-family office that services high net wroth individuals as we are also advisors to other Family/Multi— Family Offices."
+  forms:
+    contact_request:
+      name: "Your name"
+      company: "Company"
+      email: "Your e-mail"
+      phone: "Your phone"
+      description: "Your question"
