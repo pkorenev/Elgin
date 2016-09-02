@@ -1,0 +1,10 @@
+.row
+  .columns
+    .text-center
+      h2.header
+        |Admin
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = input(resource, :email)
+      = input(resource, :password)
+      button type="submit"
+        = t("login")

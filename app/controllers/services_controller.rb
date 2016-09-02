@@ -1,5 +1,4 @@
 class ServicesController < ApplicationController
-  self.layout "home"
   before_action :initialize_service, only: [:show]
 
   def index
