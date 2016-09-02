@@ -1,0 +1,18 @@
+.large-3.medium-6.small-6.columns
+  .square
+    .text-center
+      p.title
+        = partner.name
+      p.subtitle
+        = partner.position
+    .plus
+      = inline_svg "icons/plus.svg"
+    .popup
+      .text
+        p.title
+          = partner.name
+        p.subtitle
+          = partner.name
+        = raw partner.description
+        .close-popup
+          = inline_svg "icons/cross.svg"

@@ -19,13 +19,13 @@
       = inline_svg "icons/social-fb.svg"
       = inline_svg "icons/social-twitter.svg"
     p
-      | Elgin’s duty of care is to the client, our clients come first because our clients make our business
+      = t("footer.description")
   .bottom-part
     .row
       .large-6.medium-12.columns
         a href="http://voroninstudio.eu/uk" target="_blank"
           = inline_svg "icons/voronin-logo.svg"
-          | Handcrafted in Voronin Design Studio &mdash; 2016
+          = t("developed-by", {year: Date.today.year})
       .large-6.medium-12.columns
         p
-          | &copy; 2016 Elgin - All right reserved
+          = t("copyright", {year: Date.today.year})

@@ -5,7 +5,7 @@ class Testimonial < ActiveRecord::Base
 
   image :avatar, styles: { avatar: "500x500#", thumb: "100x100" }
 
-  scope :published, -> { where(published: 't') }
+  boolean_scope :published
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
   has_cache

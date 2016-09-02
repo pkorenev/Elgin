@@ -12,9 +12,14 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::NavigationHelper
   include Cms::Helpers::ActionView::UrlHelper
   include Cms::Helpers::FormsHelper
+  include Cms::Helpers::TranslationHelper
   include ApplicationHelper
 
   before_action :set_locale, unless: :admin_panel?
+
+  reload_text_translations
+
+  reload_rails_admin_config
 
 
 
@@ -54,4 +59,6 @@ class ApplicationController < ActionController::Base
 
     @_locale_links = locale_links
   end
+
+
 end

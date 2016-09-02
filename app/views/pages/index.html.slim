@@ -6,9 +6,8 @@
           .text-container
             h1.main-header
               | elgin
-              span consulting
-            p Elgin is an independent International advisor to high net worth individuals and Family/Multi-Family Offices. The team at Elgin bring decades of experience from highly professional backgrounds and top-rated international institutions offering direct service to clients from around the world. Our ultimate goal is to provide clients with tailor-made solutions that achieve their desired outcome.
-            p Elgin is independent wealth structuring, real estate and Family Office services company based out of London, UK. Elgin specialises in providing bespoke and integrated private office services to high-net-worth individuals as well as specialized services to Family/Multi-Family Offices.
+              /span consulting
+            = t("home.intro-text")
           p.bottom-text advantages
       .large-6.columns
         .right-side
@@ -16,37 +15,41 @@
           .burgundy-line
           .white-frame
           .red-square
-            a href="#" more
+            a href="#"
+              = t("more")
             = inline_svg "icons/arrow-right.svg"
   .main-container
     .row
       .columns
         h2.section-header
-          | our services
-        p.under-section-header Elgin is an independent wealth structuring and wealth solutions provider.  Our services go beyond a typical multi-family office that services high net wroth individuals as we are also advisors to other Family/Multi&mdash; Family Offices.
+          = t("home.services.title")
+
+        = t("home.services.description")
         - if @services.try(:any?)
         .squares-wrapper
           .row.collapse
             - @services.each_with_index do |service, index|
-              = render "service", service: service, service_index: index
+              .large-3.medium-4.small-6.columns.service
+                = render "service", service: service, service_index: index
 
-        h2.section-header
-          = t("advantages-block.title")
-        p.under-section-header
-          = t("advantages-block.description")
-        .row
-          - @advantages.each do |item|
-            .large-4.medium.medium-12.small-12.columns
-              .advantage-block
-                span.number
-                  = item[:count]
-                  sub
-                    span = inline_svg "icons/slash.svg"
-                .text
-                  p.title
-                    = item[:label]
-                  p.regular
-                    = item[:description]
+        - if @advantages.try(:any?)
+          h2.section-header
+            = t("advantages-block.title")
+          p.under-section-header
+            = t("advantages-block.description")
+          .row
+            - @advantages.each do |item|
+              .large-4.medium.medium-12.small-12.columns
+                .advantage-block
+                  span.number
+                    = item[:count]
+                    sub
+                      span = inline_svg "icons/slash.svg"
+                  .text
+                    p.title
+                      = item[:label]
+                    p.regular
+                      = item[:description]
 
         /= render "testimonials"
   .contact-container

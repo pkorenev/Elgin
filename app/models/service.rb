@@ -6,7 +6,7 @@ class Service < ActiveRecord::Base
   image :banner, styles: {xxl: "2100x750#", thumb: "210x75#"}
   image :avatar, styles: { avatar: "400x400#", thumb: "100x100" }
 
-  scope :published, -> { where(published: 't') }
+  boolean_scope :published
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
   has_cache
