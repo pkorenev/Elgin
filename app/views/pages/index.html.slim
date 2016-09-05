@@ -24,8 +24,8 @@
       .columns
         h2.section-header
           = t("home.services.title")
-
-        = t("home.services.description")
+        .under-section-header
+          = t("home.services.description")
         - if @services.try(:any?)
         .squares-wrapper
           .row.collapse
