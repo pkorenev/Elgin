@@ -8,8 +8,10 @@ class PagesController < ApplicationController
     @services = Service.published.sort_by_sorting_position
     #@testimonials = Testimonial.published.sort_by_sorting_position
 
-    @advantages = I18n.t("advantages-block.advantages")
+    @advantages = Advantage.published.sort_by_sorting_position
     @contact_form = ContactRequest.new
+
+
   end
 
   def about_us

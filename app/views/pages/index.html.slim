@@ -8,14 +8,14 @@
               | elgin
               /span consulting
             = t("home.intro-text")
-          p.bottom-text advantages
+          /p.bottom-text advantages
       .large-6.columns
         .right-side
           .img style="background-image: url(#{asset_path('photos/fullpage-photo.jpg')})"
           .burgundy-line
           .white-frame
           .red-square
-            a href="#"
+            a href=Pages.about_us.url
               = t("more")
             = inline_svg "icons/arrow-right.svg"
   .main-container
@@ -42,14 +42,14 @@
               .large-4.medium.medium-12.small-12.columns
                 .advantage-block
                   span.number
-                    = item[:count]
+                    = item.title
                     sub
                       span = inline_svg "icons/slash.svg"
                   .text
                     p.title
-                      = item[:label]
+                      = item.subtitle
                     p.regular
-                      = item[:description]
+                      = item.description
 
         /= render "testimonials"
   .contact-container
