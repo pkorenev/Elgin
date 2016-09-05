@@ -45,11 +45,14 @@
                     = item.title
                     sub
                       span = inline_svg "icons/slash.svg"
-                  .text
-                    p.title
-                      = item.subtitle
-                    p.regular
-                      = item.description
+                  - if item.subtitle.present? || item.description.present?
+                    .text
+                      - if item.subtitle.present?
+                        p.title
+                          = item.subtitle
+                      - if item.description.present?
+                        p.regular
+                          = item.description
 
         /= render "testimonials"
   .contact-container
