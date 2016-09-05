@@ -3,9 +3,10 @@ class ApplicationMailer < ActionMailer::Base
 
   def new_contact_request(r)
     @contact_request = r
+    @resource = r
 
     mail(
-        template_name: "call_request",
+        template_name: "contact_request",
         to: receivers("contact_request"),
         from: "Elgin <#{ActionMailer::Base.smtp_settings[:user_name]}>",
         subject: "New contact request"

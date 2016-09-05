@@ -8,7 +8,7 @@ class FormsController < ApplicationController
     req.locale = I18n.locale
     req.save
 
-    ApplicationMailer.new_hire_us_request(req).deliver_now
+    ApplicationMailer.new_contact_request(req).deliver_now
 
     data = {}
     render json: data, status: 201
