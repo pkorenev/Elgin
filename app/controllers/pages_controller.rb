@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   end
 
   def contact
-
+    @contact_form = ContactRequest.new
   end
 
   def terms_and_conditions
