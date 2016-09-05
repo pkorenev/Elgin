@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
     root to: "pages#index"
     controller :pages do
-      get "about_us", action: "about_us"
+      get "about-us", action: "about_us"
       get "faq", action: "faq"
       get "contact", action: "contact"
       get "terms-and-conditions", action: "terms_and_conditions", as: :terms_and_conditions
