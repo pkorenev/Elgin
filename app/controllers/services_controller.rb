@@ -21,6 +21,9 @@ class ServicesController < ApplicationController
   private
   def initialize_service
     @service = Service.published.joins(:translations).where(service_translations: { url_fragment: params[:id], locale: params[:locale] } ).first
+    if @service.nil?
+      return render_not_found
+    end
     set_page_metadata(@service)
     initialize_locale_links
   end
