@@ -163,7 +163,7 @@ module RailsAdminDynamicConfig
 
         config.model Partner do
           nestable_list({position_field: :sorting_position})
-
+          field :published
           field :translations, :globalize_tabs
         end
 
@@ -176,7 +176,7 @@ module RailsAdminDynamicConfig
 
         config.model ClientGoal do
           nestable_list({position_field: :sorting_position})
-
+          field :published
           field :icon
           field :translations, :globalize_tabs
         end
@@ -189,7 +189,7 @@ module RailsAdminDynamicConfig
 
         config.model Advantage do
           nestable_list({position_field: :sorting_position})
-
+          field :published
           field :translations, :globalize_tabs
         end
 
