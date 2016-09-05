@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::FormsHelper
   include Cms::Helpers::TranslationHelper
   include ApplicationHelper
+  include Cms::Helpers::ImageHelper
 
   before_action :set_locale, unless: :admin_panel?
 
