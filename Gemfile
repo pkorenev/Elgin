@@ -101,3 +101,7 @@ gem 'rails_admin_globalize_field'
 gem 'russian'
 
 gem 'pg'
+
+gem 'rails_db'
+
+gem 'db-backuper', path: "/media/data/pasha/gems/db-backuper"
