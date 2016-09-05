@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def render_not_found
     @render_header = false
     @render_footer = false
-    render template: "errors/not_found.html.slim", layout: "home"
+    render template: "errors/not_found.html.slim", status: 404
   end
 
   def default_url_options
