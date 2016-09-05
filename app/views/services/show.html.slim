@@ -15,7 +15,8 @@
     .png style="background-image: url(#{asset_path('photos/pattern.png')})"
     .frame
     .text-center
-      p.title
+      - services_url = (services_page = Pages.services).try(:url).present? ? services_page.url : services_page.try(:default_url)
+      a.title href=services_url
         = t("service.services-link")
       p.header
         = @service.name
