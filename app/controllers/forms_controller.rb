@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  def hire_us_request
+  def contact_request
     req_params = params[:contact_request] || {}
 
     req = ContactRequest.new(req_params)
