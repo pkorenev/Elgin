@@ -25,7 +25,7 @@
         .block-wrapper
           .row
             - @client_goals.each do |item|
-              .large-6.medium-12.columns
+              .large-6.medium-12.columns.client-goal
                 .block-container
                   = embedded_svg_from_absolute_path(item.icon.path)
                   .text
