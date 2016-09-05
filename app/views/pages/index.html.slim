@@ -15,7 +15,7 @@
           .burgundy-line
           .white-frame
           .red-square
-            a href=Pages.about_us.url
+            a href=(about_page=Pages.about_us; about_page.url.present? ? about_page.url : about_page.default_url )
               = t("more")
             = inline_svg "icons/arrow-right.svg"
   .main-container
