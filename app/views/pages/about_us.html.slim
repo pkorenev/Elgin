@@ -27,7 +27,7 @@
             - @client_goals.each do |item|
               .large-6.medium-12.columns
                 .block-container
-                  = emdedded_svg_from_absolute_path(item.icon.path)
+                  = embedded_svg_from_absolute_path(item.icon.path)
                   .text
                     .title
                       = raw item.name
