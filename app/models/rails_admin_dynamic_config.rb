@@ -159,7 +159,7 @@ module RailsAdminDynamicConfig
           fields :name, :position, :content
         end
 
-        config.include_models Partner, ClientGoal
+        config.include_models Partner, ClientGoal, Advantage
 
         config.model Partner do
           nestable_list({position_field: :sorting_position})
@@ -184,6 +184,19 @@ module RailsAdminDynamicConfig
         config.model_translation ClientGoal do
           field :locale, :hidden
           field :name
+          field :description
+        end
+
+        config.model Advantage do
+          nestable_list({position_field: :sorting_position})
+
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Advantage do
+          field :locale, :hidden
+          field :title
+          field :subtitle
           field :description
         end
       end
