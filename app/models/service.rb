@@ -13,4 +13,9 @@ class Service < ActiveRecord::Base
   has_seo_tags
 
   after_create :initialize_sorting_position
+
+  def url(locale = I18n.locale)
+    url_fragment = self.translations_by_locale[locale.to_sym].try(:url_fragment)
+    "/#{locale}/services/#{url_fragment}"
+  end
 end
