@@ -29,7 +29,7 @@
         .squares-wrapper
           .row.collapse
             - @services.each_with_index do |service, index|
-              .large-3.medium-4.small-6.columns.service
+              .large-4.medium-4.small-6.columns.service
                 = render "service", service: service, service_index: index
 
         - if @advantages.try(:any?)
