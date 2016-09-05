@@ -18,7 +18,9 @@
       .columns
         h2.section-header
           = t("about_us.approach.title")
-        = t("about_us.approach.description")
+
+        .under-section-header
+          = t("about_us.approach.description")
 
         .block-wrapper
           .row
@@ -36,6 +38,8 @@
           = t("about_us.network.header")
         .row
           .large-6.medium-12.columns
-            = t("about_us.network.column-1")
+            .under-section-header
+              = t("about_us.network.column-1")
           .large-6.medium-12.columns
-            = t("about_us.network.column-2")
+            .under-section-header
+              = t("about_us.network.column-2")
