@@ -80,31 +80,31 @@ ul
 	text-align: center
 	padding: 0.9375em
 	margin-top: -5%
-		.header
-			position: relative
-			font-size: 3.125em
-			color: $main
-			text-transform: uppercase
-			margin-bottom: 20px
-			&:after
-				content: ''
-				position: absolute
-				width: 500px
-				height: 1px
-				background-color: $light-grey
-				bottom: 0
-				left: 50%
-				+translate(-50%,0)
+	.header
+		position: relative
+		font-size: 3.125em
+		color: $main
+		text-transform: uppercase
+		margin-bottom: 20px
+		&:after
+			content: ''
+			position: absolute
+			width: 500px
+			height: 1px
+			background-color: $light-grey
+			bottom: 0
+			left: 50%
+			+translate(-50%,0)
 				@media #{$small-only}
-					width: 100%
-			@media #{$xxlarge-up}
-				font-size: 4.125em
-				margin-bottom: 25px
-				&:after
-					bottom: -5px
-		p
-			max-width: 500px
-			margin: 0 auto
+				width: 100%
+		@media #{$xxlarge-up}
+			font-size: 4.125em
+			margin-bottom: 25px
+			&:after
+				bottom: -5px
+	p
+		max-width: 500px
+		margin: 0 auto
 
 .square
 	position: relative
