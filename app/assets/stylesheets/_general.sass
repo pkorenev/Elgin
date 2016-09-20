@@ -4,110 +4,111 @@ $light-grey: #BCBCBC
 $grey: #747474
 
 body
-  font-size: 16px
-  font-family: 'Playfair Display', serif
-  color: $dark-grey
-  @media #{$small-only}
-    font-size: 12px
+	font-size: 16px
+	font-family: 'Playfair Display', serif
+	color: $dark-grey
+	@media #{$small-only}
+		font-size: 12px
 
 =filter($filter-type,$filter-amount)
-  -webkit-filter: $filter-type+unquote('(#{$filter-amount})')
-  -moz-filter: $filter-type+unquote('(#{$filter-amount})')
-  -ms-filter: $filter-type+unquote('(#{$filter-amount})')
-  -o-filter: $filter-type+unquote('(#{$filter-amount})')
-  filter: $filter-type+unquote('(#{$filter-amount})')
+	-webkit-filter: $filter-type+unquote('(#{$filter-amount})')
+	-moz-filter: $filter-type+unquote('(#{$filter-amount})')
+	-ms-filter: $filter-type+unquote('(#{$filter-amount})')
+	-o-filter: $filter-type+unquote('(#{$filter-amount})')
+	filter: $filter-type+unquote('(#{$filter-amount})')
 
 =grayscale
-  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale") // Firefox 10+, Firefox on Android
-  filter: gray // IE6-9
-  -webkit-filter: grayscale(100%) // Chrome 19+, Safari 6+, Safari 6+ iOS
-  filter: grayscale(100%)
+	filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale") // Firefox 10+, Firefox on Android
+	filter: gray // IE6-9
+	-webkit-filter: grayscale(100%) // Chrome 19+, Safari 6+, Safari 6+ iOS
+	filter: grayscale(100%)
 
 =disable-grayscale
-  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale")
-  -webkit-filter: grayscale(0%)
-  filter: grayscale(0%)
+	filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale")
+	-webkit-filter: grayscale(0%)
+	filter: grayscale(0%)
 
 .img
-  background-size: cover
-  background-position: center
+	background-size: cover
+	background-position: center
 a
-  text-decoration: none
-  display: block
-  color: inherit
+	text-decoration: none
+	display: block
+	color: inherit
 ul
-  list-style: none
+	list-style: none
 
 .bx-wrapper, .bx-viewport
-  height: 100%
-  width: 100%
-  li
-    height: 100%
+	height: 100%
+	width: 100%
+	li
+		height: 100%
 
 .section-header
-  position: relative
-  font-size: 3.125em
-  text-transform: uppercase
-  color: $main
-  display: inline-block
-  margin-bottom: 20px
-  &:after
-    content: ''
-    position: absolute
-    width: 1000px
-    height: 1px
-    background-color: $light-grey
-    right: 0
-    bottom: 0
+	position: relative
+	font-size: 3.125em
+	text-transform: uppercase
+	color: $main
+	display: inline-block
+	margin-bottom: 20px
+	&:after
+		content: ''
+		position: absolute
+		width: 1000px
+		height: 1px
+		background-color: $light-grey
+		right: 0
+		bottom: 0
 .under-section-header
-  max-width: 580px
+	max-width: 580px
 .menu-button
-  cursor: pointer
-  position: relative
-  z-index: 1
-  width: 4em
-  height: 4em
-  background-color: $main
-  float: left
-  padding: 1.5em 1em
-  .menu-button-lines
-    +burger(30px, 2px, 5px, #fff, 1px)
-    position: absolute
-  @media #{$small-only}
-    padding: 1.25em 0.75em
+	cursor: pointer
+	position: relative
+	z-index: 1
+	width: 4em
+	height: 4em
+	background-color: $main
+	float: left
+	padding: 1.5em 1em
+	.menu-button-lines
+		+burger(30px, 2px, 5px, #fff, 1px)
+		position: absolute
+	@media #{$small-only}
+		padding: 1.25em 0.75em
 
 .text-center
-  text-align: center
-  padding: 0.9375em
-  .header
-    position: relative
-    font-size: 3.125em
-    color: $main
-    text-transform: uppercase
-    margin-bottom: 20px
-    &:after
-      content: ''
-      position: absolute
-      width: 500px
-      height: 1px
-      background-color: $light-grey
-      bottom: 0
-      left: 50%
-      +translate(-50%,0)
-      @media #{$small-only}
-        width: 100%
-    @media #{$xxlarge-up}
-      font-size: 4.125em
-      margin-bottom: 25px
-      &:after
-        bottom: -5px
-  p
-    max-width: 500px
-    margin: 0 auto
+	text-align: center
+	padding: 0.9375em
+	margin-top: -5%
+		.header
+			position: relative
+			font-size: 3.125em
+			color: $main
+			text-transform: uppercase
+			margin-bottom: 20px
+			&:after
+				content: ''
+				position: absolute
+				width: 500px
+				height: 1px
+				background-color: $light-grey
+				bottom: 0
+				left: 50%
+				+translate(-50%,0)
+				@media #{$small-only}
+					width: 100%
+			@media #{$xxlarge-up}
+				font-size: 4.125em
+				margin-bottom: 25px
+				&:after
+					bottom: -5px
+		p
+			max-width: 500px
+			margin: 0 auto
 
 .square
-  position: relative
-  &:after
-    content: ''
-    display: block
-    padding-bottom: 100%
+	position: relative
+	&:after
+		content: ''
+		display: block
+		padding-bottom: 100%
