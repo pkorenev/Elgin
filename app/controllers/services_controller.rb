@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :initialize_service, only: [:show]
+  caches_page :index, :show
 
   def index
     @services = Service.published.sort_by_sorting_position

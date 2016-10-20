@@ -48,6 +48,9 @@ module RailsAdminDynamicConfig
             nestable do
               only [Service, Testimonial, Partner, ClientGoal]
             end
+            root_clear_cache do
+
+            end
 
             ## With an audit adapter, you can add:
             # history_index
@@ -198,6 +201,11 @@ module RailsAdminDynamicConfig
           field :title
           field :subtitle
           field :description
+        end
+
+        config.include_models Pages::SitemapXml
+        config.model Pages::SitemapXml do
+          field :content
         end
       end
     end

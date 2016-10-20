@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get "sitemap", to: "sitemap#index", format: "xml", as: :sitemap_xml
 
   root as: "root_without_locale", to: "application#root_without_locale"
 

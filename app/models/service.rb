@@ -10,7 +10,12 @@ class Service < ActiveRecord::Base
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
   has_cache
+  def cache_instances
+    [Pages.home, Pages.services, Service.all, Pages.sitemap_xml]
+  end
+
   has_seo_tags
+  has_sitemap_record
 
   after_create :initialize_sorting_position
 

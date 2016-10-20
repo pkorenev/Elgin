@@ -1,0 +1,1 @@
+Cms::CompressionConfig.initialize_compression

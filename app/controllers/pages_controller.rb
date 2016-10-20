@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
   before_action :initialize_locale_links, except: [:index]
 
+  caches_page :index, :about_us, :contact, :terms_and_conditions
+
   def index
     set_page_metadata(:home)
     initialize_locale_links
