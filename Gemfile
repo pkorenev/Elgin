@@ -74,6 +74,9 @@ gem 'quiet_assets'
 
 gem 'kaminari'
 
+
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier'
 gem "htmlcompressor"
 gem 'rack-page_caching'
 
