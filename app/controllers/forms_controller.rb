@@ -2,7 +2,7 @@ class FormsController < ApplicationController
   def contact_request
     req_params = params[:contact_request] || {}
 
-    req = ContactRequest.new(req_params)
+    req = FormConfigs::ContactRequest.new(req_params)
     req.referer = request.referer
     req.session_id = session.id
     req.locale = I18n.locale

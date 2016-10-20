@@ -1,3 +1,5 @@
-class ContactRequest < Cms::FormConfig
+module FormConfigs
+  class ContactRequest < Cms::FormConfig
 
+  end
 end
