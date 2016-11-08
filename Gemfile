@@ -93,8 +93,6 @@ gem 'require_reloader'
 gem 'puma'
 
 gem 'globalize'
-gem 'rails_admin_nestable'
-
 gem 'rails_admin_globalize_field'
 
 gem 'russian'
