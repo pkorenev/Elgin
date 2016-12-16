@@ -63,7 +63,7 @@ module RailsAdminDynamicConfig
 
         config.model_translation Cms::Page do
           field :locale, :hidden
-          #field :url
+          field :url
           field :content, :ck_editor
           #field :name
         end
