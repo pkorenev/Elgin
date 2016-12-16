@@ -62,7 +62,10 @@ module RailsAdminDynamicConfig
         config.include_models Cms::MetaTags, Cms::Page
 
         config.model_translation Cms::Page do
-
+          field :locale, :hidden
+          #field :url
+          field :content, :ck_editor
+          #field :name
         end
 
         config.model Cms::MetaTags do

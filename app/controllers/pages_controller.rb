@@ -12,8 +12,6 @@ class PagesController < ApplicationController
 
     @advantages = Advantage.published.sort_by_sorting_position
     @contact_form = ContactRequest.new
-
-
   end
 
   def about_us
@@ -31,6 +29,7 @@ class PagesController < ApplicationController
 
   def terms_and_conditions
     @content = Pages.terms_and_conditions.content
+    render "text_page"
   end
 
   private
