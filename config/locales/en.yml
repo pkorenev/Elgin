@@ -62,6 +62,8 @@ en:
   services:
     title: "Our services"
     description: "Elgin is an independent wealth structuring and wealth solutions provider. Our services go beyond a typical multi-family office that services high net wroth individuals as we are also advisors to other Family/Multi— Family Offices."
+  terms_and_conditions:
+    title: "Terms and conditions"
   forms:
     contact_request:
       name: "Your name"

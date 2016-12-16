@@ -1,1 +1,17 @@
-= raw @content
+.about-wrapper
+  .banner style="background-image: url(#{asset_path('photos/banner-about.jpg')})"
+    .text-center
+      h2.header
+        = t("terms_and_conditions.title")
+      /p
+        = t("terms_and_conditions.description")
+  .staff.terms-and-conditions-content
+    .row
+      .columns
+        = raw @content
+
+
+  /.main-container
+    .row
+      .columns
+        = raw @content
