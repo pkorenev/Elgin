@@ -9,10 +9,10 @@ class Service < ActiveRecord::Base
   boolean_scope :published
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
-  has_cache
-  def cache_instances
-    [Pages.home, Pages.services, Service.all, Pages.sitemap_xml]
+  has_cache do
+    pages :sitemap_xml, :home, :services, Service.all
   end
+
 
   has_seo_tags
   has_sitemap_record
@@ -21,6 +21,9 @@ class Service < ActiveRecord::Base
 
   def url(locale = I18n.locale)
     url_fragment = self.translations_by_locale[locale.to_sym].try(:url_fragment)
+    if url_fragment.blank?
+      return nil
+    end
     "/#{locale}/services/#{url_fragment}"
   end
 end

@@ -4,9 +4,8 @@ class Partner < ActiveRecord::Base
   boolean_scope :published
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
-  has_cache
-  def cache_instances
-    [Pages.about_us]
+  has_cache do
+    pages :about_us
   end
   after_create :initialize_sorting_position
 end
